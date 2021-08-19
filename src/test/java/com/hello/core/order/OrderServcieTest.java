@@ -1,6 +1,8 @@
 package com.hello.core.order;
 
 import com.hello.core.AppConfig;
+import com.hello.core.AutoAppConfig;
+import com.hello.core.discount.DiscountPolicy;
 import com.hello.core.member.Grade;
 import com.hello.core.member.Member;
 import com.hello.core.member.MemberService;
@@ -8,6 +10,7 @@ import com.hello.core.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderServcieTest {
 
@@ -32,5 +35,6 @@ public class OrderServcieTest {
         Order order = orderService.createOrder(memberId, "itemA",10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+
 
 }
