@@ -1,6 +1,6 @@
 package com.hello.core.order;
 
-import com.hello.core.discount.FixdiscountPolicy;
+import com.hello.core.discount.FixDiscountPolicy;
 import com.hello.core.member.Grade;
 import com.hello.core.member.Member;
 import com.hello.core.member.MemoryMemberRepository;
@@ -16,7 +16,7 @@ class OrderServiceImplTest {
         MemoryMemberRepository memberRepository = new MemoryMemberRepository();
         memberRepository.save(new Member(1L, "naem", Grade.VIP));
 
-        OrderServiceImpl orderService = new OrderServiceImpl(memberRepository, new FixdiscountPolicy());
+        OrderServiceImpl orderService = new OrderServiceImpl(memberRepository, new FixDiscountPolicy());
         Order order = orderService.createOrder(1L,"itemA", 10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
