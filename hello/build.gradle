@@ -5,7 +5,6 @@ plugins {
     id 'war'
 }
 
-application.properties
 
 group = 'com.hello'
 version = '0.0.1-SNAPSHOT'
